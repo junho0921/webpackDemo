@@ -1,0 +1,19 @@
+{
+  "presets": ["react", "es2015"],
+  "env": {
+    "development": {
+      "plugins": [["react-transform", {
+        "transforms": [{
+          "transform": "react-transform-hmr", // todo 可能是react组件接受hmr信号的更新逻辑
+          // if you use React Native, pass "react-native" instead:
+          "imports": ["react"],
+          // this is important for Webpack HMR:
+          "locals": ["module"]
+        }]
+        // note: you can put more transforms into array
+        // this is just one of them!
+      }]]
+    },
+    "production": {}
+  }
+}
