@@ -1,0 +1,5 @@
+启用webpack hmr功能：
+1，entry配置'webpack-hot-middleware/client'
+2，plugins添加new webpack.HotModuleReplacementPlugin()
+3，.babelrc配置上"react-transform-hmr"；
+4，服务器配置上webpackHotMiddleware中间件
