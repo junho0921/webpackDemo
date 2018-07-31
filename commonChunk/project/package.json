@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "buildSplit": "webpack --config webpack/config_compressSplit.js",
+    "buildSplitManifest": "webpack --config webpack/config_compressSplitManifest.js",
+    "buildSplitManifestRuntime": "webpack --config webpack/config_compressSplitManifestRuntime.js",
+    "buildBasic": "webpack --config webpack/config_compressOne.js"
   },
   "dependencies": {
     "express": "^4.15.4"

@@ -20,6 +20,8 @@ new webpack.optimize.CommonsChunkPlugin({
   minChunks: Infinity
 });
 
+即使分离了manifest，但修改其中的单个文件如hello.js都会让所有文件
+
 == 方式4： runTime
 
 由于

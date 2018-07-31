@@ -1,19 +1,16 @@
 var path = require('path');
 var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fileName = __filename.split('/').pop().split('.').shift().split('_').pop();
 
-
-console.log('ssss', path.join(__dirname, 'public'))
 module.exports = {
     devtool: 'cheap-module-eval-source-map',//打包构建信息
     entry: [
         './entry/index.js'
     ],
     output: {
-        // filename: 'boundle.js',
-        // publicPath: '/dist/js/'
-        path: path.join(__dirname, 'public'),
-        filename: 'boundle.js'
+        path: path.join(__dirname, '../../public/' + fileName),
+        filename: '[name].[hash].js'
     },
     module: {
         loaders: [{
