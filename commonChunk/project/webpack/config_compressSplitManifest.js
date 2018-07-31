@@ -13,7 +13,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, '../../public/' + fileName),
-        filename: '[name].[hash].js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         loaders: [{

@@ -13,7 +13,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, '../../public/' + fileName),
-        filename: '[name].[hash].js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         loaders: [{
@@ -23,6 +23,7 @@ module.exports = {
         }]
     },
     plugins: [
+        new webpack.HashedModuleIdsPlugin(),
         new HtmlWebpackPlugin({
             title: ""
         }),
@@ -31,9 +32,6 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest'
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'runtime'
         })
     ]
 };

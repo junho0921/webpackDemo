@@ -5,9 +5,12 @@ const fileName = __filename.split('/').pop().split('.').shift().split('_').pop()
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',//打包构建信息
-    entry: [
-        './entry/index.js'
-    ],
+    entry: {
+        main: './entry/index.js',
+        vendor: [
+            'jquery'
+        ]
+    },
     output: {
         path: path.join(__dirname, '../../public/' + fileName),
         filename: '[name].[chunkhash].js'
@@ -22,6 +25,12 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: ""
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'runtime'
         })
     ]
 };

@@ -5,7 +5,8 @@
   "scripts": {
     "buildSplit": "webpack --config webpack/config_compressSplit.js",
     "buildSplitManifest": "webpack --config webpack/config_compressSplitManifest.js",
-    "buildSplitManifestRuntime": "webpack --config webpack/config_compressSplitManifestRuntime.js",
+    "buildSplitLazy": "webpack --config webpack/config_compressLazy.js",
+    "buildSplitRuntime": "webpack --config webpack/config_compressSplitRuntime.js",
     "buildBasic": "webpack --config webpack/config_compressOne.js"
   },
   "dependencies": {
