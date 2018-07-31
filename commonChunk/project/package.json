@@ -23,6 +23,7 @@
     "style-loader": "^0.18.2",
     "webpack": "^3.12.0",
     "jquery": "",
+    "clean-webpack-plugin": "",
     "html-webpack-plugin": "",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2"
