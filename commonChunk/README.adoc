@@ -1,0 +1,30 @@
+CommonsChunkPlugin
+
+== 方式1：抽离：明确的第三方库代码
+
+1，整理公共模块数组，示例：let commonModules = ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk'];
+2，配置entry，创建公共模块文件【vendor】，内容是以上，示例：entry:{vendor:commonModules}；
+3，配置插件，让编译业务代码时忽略公共模块，指定公共模块文件夹名称是第二步的名称【vendor】，示例：
+new webpack.optimize.CommonsChunkPlugin({
+    name: 'vendor'
+})；
+
+== 方式2：抽离：所有公共代码代码
+
+== 方式3：Manifest file
+
+To extract the webpack bootstrap logic into a separate file, use the CommonsChunkPlugin on a name which is not defined as entry. Commonly the name manifest is used. See the caching guide for details.
+
+new webpack.optimize.CommonsChunkPlugin({
+  name: "manifest",
+  minChunks: Infinity
+});
+
+== 方式4： runTime
+
+由于
+
+new webpack.optimize.CommonsChunkPlugin({
+  name: "manifest",
+  minChunks: Infinity
+});
