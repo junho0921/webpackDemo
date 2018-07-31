@@ -1,6 +1,6 @@
-CommonsChunkPlugin
+== CommonsChunkPlugin
 
-== 方式1：抽离：明确的第三方库代码
+=== 方式1：抽离：明确的第三方库代码
 
 1，整理公共模块数组，示例：let commonModules = ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk'];
 2，配置entry，创建公共模块文件【vendor】，内容是以上，示例：entry:{vendor:commonModules}；
@@ -9,7 +9,7 @@ new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor'
 })；
 
-== 方式2：提取模板(Extracting Boilerplate)
+=== 方式2：提取模板(Extracting Boilerplate)
 
 就像我们之前从代码分离了解到的，CommonsChunkPlugin 可以用于将模块分离到单独的文件中。
 然而 CommonsChunkPlugin 有一个较少有人知道的功能是，能够在每次修改后的构建结果中，将 webpack 的样板(boilerplate)和 manifest 提取出来。
@@ -22,8 +22,24 @@ new webpack.optimize.CommonsChunkPlugin({
 
 即使分离了manifest，但修改其中的单个文件如hello.js都会让所有文件chunkHash收到变换;
 
-== 方式3：HashedModuleIdsPlugin
+=== 方式3：HashedModuleIdsPlugin
 
 通过使用modulesId的方式，配合CommonsChunkPlugin抽离manifest，对平时没有改动的第三方库manifest
 
 // todo 没有完成
+
+== 其他
+
+=== 外部引用
+
+commonChunk/project/webpack/config_compressExternal.js
+
+让第三方模块作为外部引用，不被编译
+
+=== 编译为通用library格式
+
+commonChunk/project/webpack/config_compressLibrary.js
+
+让编译文件的输出格式为指定模块格式
+
+

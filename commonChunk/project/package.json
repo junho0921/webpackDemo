@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "buildSplitExternal": "webpack --config webpack/config_compressExternal.js",
+    "buildSplitLibrary": "webpack --config webpack/config_compressLibrary.js",
+
     "buildSplit": "webpack --config webpack/config_compressSplit.js",
     "buildSplitManifest": "webpack --config webpack/config_compressSplitManifest.js",
     "buildSplitLazy": "webpack --config webpack/config_compressLazy.js",
